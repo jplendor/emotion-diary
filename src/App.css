@@ -45,6 +45,7 @@ body {
   padding-right: 20px;
 
   font-size: 18px;
+  font-family: 'Gamja Flower', cursive;
 
   white-space: nowrap;
 }
@@ -164,3 +165,42 @@ header button {
   display: flex;
   align-items: center;
 }
+
+/* DiaryList */
+
+.DiaryList .menu_wrapper {
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.DiaryList .ControlMenu {
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  cursor: pointer;
+  font-family: 'Gamja Flower', cursive;
+  font-size: 18px;
+}
+
+.DiaryList .menu_wrapper .left_col {
+  display: flex;
+  align-items: center;
+} 
+
+.DiaryList .menu_wrapper .right_col {
+  flex-grow: 1;
+} 
+
+.DiaryList .menu_wrapper .right_col button{
+  width: 100%;
+} 
