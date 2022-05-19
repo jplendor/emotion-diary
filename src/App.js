@@ -36,8 +36,16 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
+const dummyData = [
+    { id: 1, emotion: 1, content: "샘플 일기 1번", date: 1652965368076 },
+    { id: 2, emotion: 2, content: "샘플 일기 2번", date: 1652965368077 },
+    { id: 3, emotion: 3, content: "샘플 일기 3번", date: 1652965368078 },
+    { id: 4, emotion: 4, content: "샘플 일기 4번", date: 1652965368079 },
+    { id: 5, emotion: 5, content: "샘플 일기 5번", date: 1652965368080 },
+];
+
 function App() {
-    const [data, dispatch] = useReducer(reducer, []);
+    const [data, dispatch] = useReducer(reducer, dummyData);
     // const [state, dispatch] = useReducer(reducer, state의 초기 값)
     // dispatch : 액션을 발생시키는 함수
     // reducer : 현재 상태와 액션 객체를 파라미터로 받아와서 새로운 상태를 반환해주는 함수
