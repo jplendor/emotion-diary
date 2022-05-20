@@ -1,8 +1,33 @@
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { DiaryStateContext } from "../App";
+
+import DiaryEditor from "../components/DiaryEditor";
+
 const Edit = () => {
+    const [originData, setOriginData] = useState();
+    const diaryList = useContext(DiaryStateContext);
+    const navigate = useNavigate();
+    const { id } = useParams();
+
+    useEffect(() => {
+        if (diaryList.length >= 1) {
+            const targetDiary = diaryList.find(
+                (item) => parseInt(item.id) === parseInt(id)
+            );
+            if (targetDiary) {
+                setOriginData(targetDiary);
+            } else {
+                navigate("/", { replace: true });
+            }
+        }
+    }, [id, diaryList]);
+
     return (
         <div>
-            <h1>Edit</h1>
-            <p>이곳은 Edit 입니다.</p>
+            {originData && (
+                <DiaryEditor isEdit={true} originData={originData} />
+            )}
         </div>
     );
 };
